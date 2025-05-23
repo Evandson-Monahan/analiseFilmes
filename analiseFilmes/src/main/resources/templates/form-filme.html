@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${filme.id != null} ? 'Editar Filme' : 'Novo Filme'"></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="header">
+        <div class="container text-center">
+            <h1 th:text="${filme.id != null} ? 'Editar Filme' : 'Adicionar Novo Filme'"></h1>
+        </div>
+    </div>
+
+    <div class="container animated">
+        <div class="card">
+            <div class="card-body">
+                <form id="formFilme">
+                    <input type="hidden" id="id" th:value="${filme.id}">
+                    
+                    <div class="mb-3">
+                        <label for="titulo" class="form-label">Título*</label>
+                        <input type="text" class="form-control" id="titulo" th:value="${filme.titulo}" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="sinopse" class="form-label">Sinopse</label>
+                        <textarea class="form-control" id="sinopse" th:text="${filme.sinopse}" rows="3"></textarea>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="genero" class="form-label">Gênero*</label>
+                        <input type="text" class="form-control" id="genero" th:value="${filme.genero}" required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="anoLancamento" class="form-label">Ano de Lançamento*</label>
+                        <input type="number" class="form-control" id="anoLancamento" th:value="${filme.anoLancamento}" required>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Salvar Filme</button>
+                        <a href="/filmes" class="btn btn-secondary">Cancelar</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/js/filme.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/theme.js"></script>
+</body>
+</html>

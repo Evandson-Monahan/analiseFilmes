@@ -1,0 +1,26 @@
+# Arquivos do NetBeans
+/nbproject/private/
+/build/
+/dist/
+/nbdist/
+
+# Arquivos do Maven
+target/
+*.jar
+*.war
+*.ear
+
+# Banco de dados
+*.db
+
+# Arquivos de configuração local
+application.properties
+application-dev.properties
+
+# Logs
+*.log
+
+# Outros
+.DS_Store
+.idea
+*.iml

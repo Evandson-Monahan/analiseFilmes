@@ -1,0 +1,177 @@
+
+
+/* Estilos Gerais */
+:root {
+    /* Tema claro (default) */
+    --cor-primaria: #2575fc;
+    --cor-secundaria: #6a11cb;
+    --cor-texto: #343a40;
+    --cor-fundo: #f8f9fa;
+    --cor-branco: #ffffff;
+    --cor-card: #ffffff;
+    --cor-texto-card: #343a40;
+    --cor-borda: #e9ecef;
+}
+
+[data-theme="dark"] {
+    /* Tema escuro */
+    --cor-primaria: #6a11cb;
+    --cor-secundaria: #2575fc;
+    --cor-texto: #f8f9fa;
+    --cor-fundo: #121212;
+    --cor-branco: #1e1e1e;
+    --cor-card: #1e1e1e;
+    --cor-texto-card: #e0e0e0;
+    --cor-borda: #333333;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Cabeçalho Padrão */
+.header {
+    background: linear-gradient(135deg, var(--cor-secundaria) 0%, var(--cor-primaria) 100%);
+    color: var(--cor-branco);
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Cards Padrão */
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 2rem;
+    background-color: var(--cor-card);
+    color: var(--cor-texto-card);
+    border: 1px solid var(--cor-borda);
+}
+
+.card-header {
+    background: linear-gradient(135deg, var(--cor-secundaria) 0%, var(--cor-primaria) 100%);
+    color: var(--cor-branco);
+    padding: 1.5rem;
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+/* Tabelas */
+.table-container {
+    background-color: var(--cor-branco);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+    padding: 0;
+}
+
+.filmes-table {
+    margin-bottom: 0;
+}
+
+.filmes-table thead {
+    background: linear-gradient(135deg, var(--cor-secundaria) 0%, var(--cor-primaria) 100%);
+    color: var(--cor-branco);
+}
+
+.filmes-table th {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    padding: 1rem;
+}
+
+.filmes-table td {
+    padding: 1rem;
+    vertical-align: middle;
+}
+
+/* Botões */
+.btn {
+    font-weight: 600;
+    border-radius: 50px;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--cor-secundaria) 0%, var(--cor-primaria) 100%);
+    border: none;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary {
+    background: #6c757d;
+    border: none;
+}
+
+.btn-danger {
+    background: #dc3545;
+    border: none;
+}
+
+/* Formulários */
+.form-control {
+    border-radius: 8px;
+    padding: 10px 15px;
+    border: 1px solid #ced4da;
+}
+
+.form-control:focus {
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 0.25rem rgba(37, 117, 252, 0.25);
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animated {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Botão de alternância de tema */
+.theme-switcher {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.theme-toggle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--cor-secundaria) 0%, var(--cor-primaria) 100%);
+    border: none;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}

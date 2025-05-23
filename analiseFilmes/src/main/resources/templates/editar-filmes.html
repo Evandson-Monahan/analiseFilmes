@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Filme</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/filme.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Editar Filme</h1>
+        <form th:action="@{/filmes}" method="post">
+            <input type="hidden" name="id" th:value="${filme.id}">
+            <div class="form-group">
+                <label for="titulo">Título:</label>
+                <input type="text" id="titulo" name="titulo" class="form-control" th:value="${filme.titulo}">
+            </div>
+            <div class="form-group">
+                <label for="sinopse">Sinopse:</label>
+                <textarea id="sinopse" name="sinopse" class="form-control" th:text="${filme.sinopse}"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="genero">Gênero:</label>
+                <input type="text" id="genero" name="genero" class="form-control" th:value="${filme.genero}">
+            </div>
+            <div class="form-group">
+                <label for="anoLancamento">Ano de Lançamento:</label>
+                <input type="number" id="anoLancamento" name="anoLancamento" class="form-control" th:value="${filme.anoLancamento}">
+            </div>
+            <button type="submit" class="btn btn-success">Salvar</button>
+            <a href="/filmes" class="btn btn-secondary">Cancelar</a>
+        </form>
+    </div>
+    <script src="/js/theme.js"></script>
+</body>
+</html>
